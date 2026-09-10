@@ -6,9 +6,10 @@ public:
             ans.push_back(current);
             return;
         }
-        
+        if (remain < 0) {
+            return;
+        }
         for (int i=index;i<candidates.size();i++){
-            if (candidates[i] > remain) break;
             current.push_back(candidates[i]);
             backtrack(candidates, i, remain - candidates[i], current);           
             current.pop_back();
@@ -18,7 +19,6 @@ public:
 
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         vector<int> current; 
-        sort(candidates.begin(), candidates.end());
         backtrack(candidates, 0, target, current); 
         return ans; 
     }
