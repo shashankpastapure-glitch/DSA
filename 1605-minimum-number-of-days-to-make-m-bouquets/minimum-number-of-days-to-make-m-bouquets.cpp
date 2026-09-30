@@ -4,7 +4,6 @@ public:
         if ((long long)m*k>bloomDay.size()) return -1;
         int low = *min_element(bloomDay.begin(),bloomDay.end());
         int high = *max_element(bloomDay.begin(), bloomDay.end());
-        int ans=high;
         while(low<=high){
             int mid = low + (high - low) / 2;
             int count=0;
@@ -25,9 +24,8 @@ public:
             }
             else{
                 high=mid-1;
-                ans = mid;
             }
         }
-        return ans;
+        return low;
     }
 };
