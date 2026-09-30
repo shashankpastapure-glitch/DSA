@@ -6,7 +6,6 @@ public:
         for (int i=0;i<weights.size();i++){
             high += weights[i];
         }
-        int ans=0;
         while(low<=high){
             int mid = low +((high-low)/2);
             int count=1;
@@ -23,9 +22,8 @@ public:
             }
             else{
                 high=mid-1;
-                ans=mid;
             }
         }
-        return ans;
+        return low;
     }
 };
