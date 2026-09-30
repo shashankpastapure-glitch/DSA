@@ -16,6 +16,8 @@ public:
                     sum=weights[j];
                     count++;
                 }
+                if (count > days)
+                    break;
             }    
             if (count>days){
                 low=mid+1;
